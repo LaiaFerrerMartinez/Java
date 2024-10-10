@@ -4,6 +4,10 @@ import java.util.Random;
 // then press Enter. You can now see whitespace characters in your code.
 public class SimpsonProgFuncional {
 
+    private static final int MAX_FILA_TABLERO = 10;
+    private static final int MAX_COLUMNA_TABLERO = 10;
+    private static char [][] tablero;
+
     private static void imprimirTablero() {
         for (int i = 0; i < MAX_FILA_TABLERO; i++) {
             for (int j = 0; j < MAX_COLUMNA_TABLERO; j++) {
@@ -14,13 +18,12 @@ public class SimpsonProgFuncional {
         }
     }
 
-    private static final int MAX_FILA_TABLERO = 10;
-    private static final int MAX_COLUMNA_TABLERO = 10;
-
-    // 1º) Inicializar mi matriz tablero
-    private static char[][] tablero = new char[MAX_FILA_TABLERO][MAX_COLUMNA_TABLERO];
+    private void
 
     public static void main(String[] args) {
+
+        // 1º) Inicializar mi matriz tablero
+        tablero = new char[MAX_FILA_TABLERO][MAX_COLUMNA_TABLERO];
 
         // 2º) Rellenar el tablero "L"
         for (int i = 0; i < MAX_FILA_TABLERO; i++) {
@@ -28,7 +31,6 @@ public class SimpsonProgFuncional {
                 // [0,0],[0,1],[0,2],ETC.
                 tablero[i][j] = 'L';
             }
-
         }
 
         // 3º) Imprimir tablero
@@ -61,7 +63,6 @@ public class SimpsonProgFuncional {
                 columnaAleatorioHomer = aleatorio.nextInt(MAX_COLUMNA_TABLERO); // Crea números aleatorios de 0 a 9
             } while (tablero[filaAleatorioHomer][columnaAleatorioHomer] != 'L');
             tablero[filaAleatorioHomer][columnaAleatorioHomer] = 'H';
-
         }
 
         // 7º) Imprimir tablero
@@ -80,11 +81,14 @@ public class SimpsonProgFuncional {
                 columnaAleatorioMuro = aleatorio.nextInt(MAX_COLUMNA_TABLERO); // Crea números aleatorios de 0 a 9
             } while (tablero[filaAleatorioMuro][columnaAleatorioMuro] != 'L');
             tablero[filaAleatorioMuro][columnaAleatorioMuro] = 'M';
-
         }
 
         // 9º) Imprimir tablero
         imprimirTablero();
+
+        System.out.println(); // Espacio entre los dos tableros
+        System.out.println();
+        System.out.println();
 
         // 10º) Poner la celda final
         tablero[MAX_FILA_TABLERO-1][MAX_COLUMNA_TABLERO-1] = 'F';
