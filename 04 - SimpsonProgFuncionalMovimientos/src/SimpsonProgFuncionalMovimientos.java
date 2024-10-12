@@ -158,7 +158,6 @@ public class SimpsonProgFuncionalMovimientos {
                                 columnaBart = columnaBart - 1;
                                 break;
                         }
-
                     } else {
                         System.out.println("Desplazamiento prohibido. Límite de tablero");
                     }
