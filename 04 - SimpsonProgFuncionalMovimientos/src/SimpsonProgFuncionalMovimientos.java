@@ -111,6 +111,11 @@ public class SimpsonProgFuncionalMovimientos {
                                 System.out.println("El muro no te deja desplazarte a esta casilla.");
                                 columnaBart = columnaBart + 1;
                                 break;
+                            case 'F':
+                                tablero[filaBart][columnaBart] = 'B';
+                                tablero[filaBart][columnaBart + 1] = 'L';
+                                vidas = -1;
+                                break;
                         }
                     } else {
                         System.out.println("Desplazamiento prohibido. Límite de tablero");
@@ -133,6 +138,11 @@ public class SimpsonProgFuncionalMovimientos {
                             case 'M':
                                 System.out.println("El muro no te deja desplazarte a esta casilla.");
                                 filaBart = filaBart - 1;
+                                break;
+                            case 'F':
+                                tablero[filaBart][columnaBart] = 'B';
+                                tablero[filaBart - 1][columnaBart] = 'L';
+                                vidas = -1;
                                 break;
                         }
                     } else {
@@ -157,6 +167,11 @@ public class SimpsonProgFuncionalMovimientos {
                                 System.out.println("El muro no te deja desplazarte a esta casilla.");
                                 columnaBart = columnaBart - 1;
                                 break;
+                            case 'F':
+                                tablero[filaBart][columnaBart] = 'B';
+                                tablero[filaBart][columnaBart - 1] = 'L';
+                                vidas = -1;
+                                break;
                         }
                     } else {
                         System.out.println("Desplazamiento prohibido. Límite de tablero");
@@ -180,6 +195,11 @@ public class SimpsonProgFuncionalMovimientos {
                                 System.out.println("El muro no te deja desplazarte a esta casilla.");
                                 filaBart = filaBart + 1;
                                 break;
+                            case 'F':
+                                tablero[filaBart][columnaBart] = 'B';
+                                tablero[filaBart + 1][columnaBart] = 'L';
+                                vidas = -1;
+                                break;
                         }
                     } else {
                         System.out.println("Desplazamiento prohibido. Límite de tablero");
@@ -190,5 +210,10 @@ public class SimpsonProgFuncionalMovimientos {
             }
             imprimirTablero();
         } while (vidas > 0);
+        if (vidas == 0) {
+            System.out.println("Te has quedado sin vidas. Has perdido.");
+        } else if (vidas == -1) {
+            System.out.println("¡Has ganado!");
+        }
     }
 }
