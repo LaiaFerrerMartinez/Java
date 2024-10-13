@@ -10,8 +10,6 @@ public class SimpsonProgFuncionalMovimientos {
     private static char [][] tablero;
     private static int filaBart;
     private static int columnaBart;
-    private static int filaDestino;
-    private static int columnaDestino;
     private static int vidas;
 
     private static void imprimirTablero() {
@@ -73,6 +71,7 @@ public class SimpsonProgFuncionalMovimientos {
                 break;
             case 'M':
                 System.out.println("El muro no te deja desplazarte a esta casilla.");
+                destinoLibre = false;
                 break;
             case 'F':
                 destinoLibre = true;
