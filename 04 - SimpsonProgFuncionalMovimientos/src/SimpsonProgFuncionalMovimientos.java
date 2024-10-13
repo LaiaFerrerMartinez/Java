@@ -60,57 +60,57 @@ public class SimpsonProgFuncionalMovimientos {
         columnaBart = columna;
     }
 
-    private static void segunCelda () {
+    private static void comprobarCeldaDestino (int filaDestino, int columnaDestino) {
+        boolean destinoLibre = false;
         switch (tablero[filaDestino][columnaDestino]) {
             case 'H':
                 vidas = vidas - 1;
                 System.out.println("Has perdido una vida. Te quedan " + vidas + " vidas.");
-                moverBart (filaDestino, columnaDestino);
+                destinoLibre = true;
                 break;
             case 'L':
-                moverBart (filaDestino, columnaDestino);
+                destinoLibre = true;
                 break;
             case 'M':
                 System.out.println("El muro no te deja desplazarte a esta casilla.");
                 break;
             case 'F':
-                moverBart (filaDestino, columnaDestino);
+                destinoLibre = true;
                 vidas = -1;
                 break;
+        }
+        if (destinoLibre = true) {
+            moverBart (filaDestino, columnaDestino);
         }
     }
 
     private static void movA () {
-        columnaDestino = columnaBart - 1;
-        if (columnaDestino >= 0) {
-            segunCelda();
+        if (columnaBart - 1 >= 0) {
+            comprobarCeldaDestino(filaBart, columnaBart - 1);
         } else {
             System.out.println("Desplazamiento prohibido. Límite de tablero");
         }
     }
 
     private static void movS () {
-        filaDestino = filaBart + 1;
-        if ((filaDestino) <= 9) {
-            segunCelda();
+        if ((filaBart + 1) <= 9) {
+            comprobarCeldaDestino(filaBart + 1, columnaBart);
         } else {
             System.out.println("Desplazamiento prohibido. Límite de tablero");
         }
     }
 
     private static void movD () {
-        columnaDestino = columnaBart + 1;
-        if ((columnaDestino) <= 9) {
-            segunCelda();
+        if ((columnaBart + 1) <= 9) {
+            comprobarCeldaDestino(filaBart, columnaBart + 1);
         } else {
             System.out.println("Desplazamiento prohibido. Límite de tablero");
         }
     }
 
     private static void movW () {
-        filaDestino = filaBart - 1;
-        if ((filaDestino) >= 0) {
-            segunCelda();
+        if ((filaBart - 1) >= 0) {
+            comprobarCeldaDestino(filaBart - 1, columnaBart);
         } else {
             System.out.println("Desplazamiento prohibido. Límite de tablero");
         }
@@ -119,8 +119,6 @@ public class SimpsonProgFuncionalMovimientos {
     private static void jugarSimpson () {
         Scanner lector = new Scanner(System.in);
         vidas = 10;
-        filaDestino = filaBart;
-        columnaDestino = columnaBart;
         do {
             System.out.println("Dime el desplazamiento que quieres realizar");
             System.out.println("WASD");
