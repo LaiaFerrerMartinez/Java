@@ -155,30 +155,21 @@ public class SimpsonProgFuncionalMovimientos {
         // 2ª) Rellenar el tablero "L"
         asignarLibreACasilla('L');
 
-        // 3º) Imprimir tablero
-        imprimirTablero();
-
-        // 4º) Asignar a Bart
+        // 3º) Asignar a Bart
         asignarPersonajesACasillaLibre('B', 1);
 
-        imprimirTablero();
-
-        // 5º) Repartir 10 Homers dentro del tablero
+        // 4º) Repartir 10 Homers dentro del tablero
         asignarPersonajesACasillaLibre('H', 10);
 
-        imprimirTablero();
-
-        // 6º) Repartir 10 Muros dentro del tablero
+        // 5º) Repartir 10 Muros dentro del tablero
         asignarPersonajesACasillaLibre('M', 10);
 
-        imprimirTablero();
-
-        // 7º) Poner la celda final
+        // 6º) Poner la celda final
         tablero[MAX_FILA_TABLERO-1][MAX_COLUMNA_TABLERO-1] = 'F';
 
         imprimirTablero();
 
-        // 8º) Desplazamiento de Bart
+        // 7º) Desplazamiento de Bart
             // W --> Arriba
             // A --> Izquierda
             // S --> Abajo
