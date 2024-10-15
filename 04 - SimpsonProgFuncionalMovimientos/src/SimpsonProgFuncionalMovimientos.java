@@ -51,91 +51,163 @@ public class SimpsonProgFuncionalMovimientos {
         }
     }
 
-    private static void moverBart (int fila, int columna) {
-        tablero[fila][columna] = 'B';
-        tablero[filaBart][columnaBart] = 'L';
-        filaBart = fila;
-        columnaBart = columna;
-    }
+    public static void main(String[] args) {
 
-    private static void comprobarCeldaDestino (int filaDestino, int columnaDestino) {
-        boolean destinoLibre = false;
-        switch (tablero[filaDestino][columnaDestino]) {
-            case 'H':
-                vidas = vidas - 1;
-                System.out.println("Has perdido una vida. Te quedan " + vidas + " vidas.");
-                destinoLibre = true;
-                break;
-            case 'L':
-                destinoLibre = true;
-                break;
-            case 'M':
-                System.out.println("El muro no te deja desplazarte a esta casilla.");
-                destinoLibre = false;
-                break;
-            case 'F':
-                destinoLibre = true;
-                vidas = -1;
-                break;
-        }
-        if (destinoLibre = true) {
-            moverBart (filaDestino, columnaDestino);
-        }
-    }
+        // 1º) Inicializar mi matriz tablero
+        tablero = new char[MAX_FILA_TABLERO][MAX_COLUMNA_TABLERO];
 
-    private static void movA () {
-        if (columnaBart - 1 >= 0) {
-            comprobarCeldaDestino(filaBart, columnaBart - 1);
-        } else {
-            System.out.println("Desplazamiento prohibido. Límite de tablero");
-        }
-    }
+        // 2ª) Rellenar el tablero "L"
+        asignarLibreACasilla('L');
 
-    private static void movS () {
-        if ((filaBart + 1) <= 9) {
-            comprobarCeldaDestino(filaBart + 1, columnaBart);
-        } else {
-            System.out.println("Desplazamiento prohibido. Límite de tablero");
-        }
-    }
+        imprimirTablero();
 
-    private static void movD () {
-        if ((columnaBart + 1) <= 9) {
-            comprobarCeldaDestino(filaBart, columnaBart + 1);
-        } else {
-            System.out.println("Desplazamiento prohibido. Límite de tablero");
-        }
-    }
+        // 3º) Asignar a Bart
+        asignarPersonajesACasillaLibre('B', 1);
 
-    private static void movW () {
-        if ((filaBart - 1) >= 0) {
-            comprobarCeldaDestino(filaBart - 1, columnaBart);
-        } else {
-            System.out.println("Desplazamiento prohibido. Límite de tablero");
-        }
-    }
+        imprimirTablero();
 
-    private static void jugarSimpson () {
+        // 4º) Repartir 10 Homers dentro del tablero
+        asignarPersonajesACasillaLibre('H', 10);
+
+        imprimirTablero();
+
+        // 5º) Repartir 10 Muros dentro del tablero
+        asignarPersonajesACasillaLibre('M', 10);
+
+        imprimirTablero();
+
+        // 6º) Poner la celda final
+        tablero[MAX_FILA_TABLERO-1][MAX_COLUMNA_TABLERO-1] = 'F';
+
+        imprimirTablero();
+
+        // 7º) Desplazamiento de Bart
+        // W --> Arriba
+        // A --> Izquierda
+        // S --> Abajo
+        // D --> Derecha
         Scanner lector = new Scanner(System.in);
         vidas = 10;
         do {
-            System.out.println("Dime el desplazamiento que quieres realizar");
+            System.out.println("Dime el desplazamiento que quieres realizar.");
             System.out.println("WASD");
             String desplazamiento = lector.nextLine();
+            System.out.println("Desplazamiento = " + desplazamiento);
             switch (desplazamiento) {
-                case "A":
-                    movA ();
+                case "A":   // Izquierda
+                    if ((columnaBart - 1) >= 0) {
+                        columnaBart = columnaBart - 1;
+                        switch (tablero[filaBart][columnaBart]) {
+                            case 'H':
+                                vidas = vidas - 1;
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart][columnaBart + 1] = 'L';
+                                System.out.println("Has perdido una vida. Te quedan " + vidas + " vidas.");
+                                break;
+                            case 'M':
+                                System.out.println("El muro no te deja desplazarte a esta casilla.");
+                                columnaBart = columnaBart + 1;
+                                break;
+                            case 'L':
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart][columnaBart + 1] = 'L';
+                                break;
+                            case 'F':
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart][columnaBart + 1] = 'L';
+                                System.out.println("¡Has ganado!");
+                                vidas = -1;
+                                break;
+                        }
+                    } else {
+                        System.out.println("Desplazamiento prohibido. Límite de tablero.");
+                    }
                     break;
-                case "S":
-                    movS ();
+                case "S":   // Abajo
+                    if ((filaBart + 1) <= 9) {
+                        filaBart = filaBart + 1;
+                        switch (tablero[filaBart][columnaBart]) {
+                            case 'H':
+                                vidas = vidas - 1;
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart - 1][columnaBart] = 'L';
+                                System.out.println("Has perdido una vida. Te quedan " + vidas + "vidas.");
+                                break;
+                            case 'M':
+                                System.out.println("El muro no te deja desplazarte a esta casilla.");
+                                filaBart = filaBart - 1;
+                                break;
+                            case 'L':
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart - 1][columnaBart] = 'L';
+                                break;
+                            case 'F':
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart - 1][columnaBart] = 'L';
+                                System.out.println("¡Has ganado!");
+                                vidas = -1;
+                                break;
+                        }
+                    } else {
+                        System.out.println("Desplazamiento prohibido. Límite de tablero.");
+                    }
                     break;
-                case "D":
-                    movD ();
+                case "D":   // Derecha
+                    if ((columnaBart + 1) <= 9) {
+                        columnaBart = columnaBart + 1;
+                        switch (tablero[filaBart][columnaBart]) {
+                            case 'H':
+                                vidas = vidas - 1;
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart][columnaBart - 1] = 'L';
+                                System.out.println("Has perdido una vida. Te quedan " + vidas + "vidas.");
+                                break;
+                            case 'M':
+                                System.out.println("El muro no te deja desplazarte a esta casilla.");
+                                columnaBart = columnaBart - 1;
+                                break;
+                            case 'L':
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart][columnaBart - 1] = 'L';
+                                break;
+                            case 'F':
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart][columnaBart - 1] = 'L';
+                                System.out.println("¡Has ganado!");
+                                vidas = -1;
+                                break;
+                        }
+                    } else {
+                        System.out.println("Desplazamiento prohibido. Límite de tablero.");
+                    }
                     break;
-                case "W":
-                    movW ();
-                    break;
-                default:
+                case "W":   // Arriba
+                    if ((filaBart - 1) >= 0) {
+                        filaBart = filaBart - 1;
+                        switch (tablero[filaBart][columnaBart]) {
+                            case 'H':
+                                vidas = vidas - 1;
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart + 1][columnaBart] = 'L';
+                                System.out.println("Has perdido una vida. Te quedan " + vidas + "vidas.");
+                                break;
+                            case 'M':
+                                System.out.println("El muro no te deja desplazarte a esta casilla.");
+                                filaBart = filaBart + 1;
+                                break;
+                            case 'L':
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart + 1][columnaBart] = 'L';
+                                break;
+                            case 'F':
+                                tablero [filaBart][columnaBart] = 'B';
+                                tablero [filaBart + 1][columnaBart] = 'L';
+                                vidas = -1;
+                                break;
+                        }
+                    } else {
+                        System.out.println("Desplazamiento prohibido. Límite de tablero.");
+                    }
                     break;
             }
             imprimirTablero();
@@ -145,35 +217,6 @@ public class SimpsonProgFuncionalMovimientos {
         } else if (vidas == -1) {
             System.out.println("¡Has ganado!");
         }
-    }
 
-    public static void main(String[] args) {
-
-        // 1º) Inicializar mi matriz tablero
-        tablero = new char[MAX_FILA_TABLERO][MAX_COLUMNA_TABLERO];
-
-        // 2ª) Rellenar el tablero "L"
-        asignarLibreACasilla('L');
-
-        // 3º) Asignar a Bart
-        asignarPersonajesACasillaLibre('B', 1);
-
-        // 4º) Repartir 10 Homers dentro del tablero
-        asignarPersonajesACasillaLibre('H', 10);
-
-        // 5º) Repartir 10 Muros dentro del tablero
-        asignarPersonajesACasillaLibre('M', 10);
-
-        // 6º) Poner la celda final
-        tablero[MAX_FILA_TABLERO-1][MAX_COLUMNA_TABLERO-1] = 'F';
-
-        imprimirTablero();
-
-        // 7º) Desplazamiento de Bart
-            // W --> Arriba
-            // A --> Izquierda
-            // S --> Abajo
-            // D --> Derecha
-        jugarSimpson ();
     }
 }
