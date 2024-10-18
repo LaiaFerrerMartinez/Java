@@ -1,4 +1,4 @@
-import java.util.Random;
+<import java.util.Random;
 import java.util.Scanner;
 
 public class EjercicioEnJava {
@@ -7,9 +7,10 @@ public class EjercicioEnJava {
         int [] vector = new int [100];
         boolean encontrado;
         Random r = new Random();
-        for (int i = 0; i < 100; i++) {
+        do {
             vector [i] = r.nextInt(100);
-        }
+            i++;
+        } while (i < 100);
         System.out.println("Dime un número.");
         Scanner lector = new Scanner (System.in);
         int num = Integer.parseInt(lector.nextLine());
