@@ -48,42 +48,34 @@ public class Bingo {
         }
     }
 
+    private static void intercambiar (int a, int b, int j) {
+        int aux = tablero [a][j];
+        tablero [a][j] = tablero [b][j];
+        tablero [b][j] = aux;
+    }
+
     private static void ordenarBingo () {
         int aux;
         for (int j = 0; j < MAX_COLUMNA_TABLERO; j++) {
             if (tablero [0][j] < tablero [1][j]) {
                 if (tablero [0][j] < tablero [2][j]) {
-                    if (tablero [2][j] < tablero [1][j]) {
-                        aux = tablero [1][j];
-                        tablero [1][j] = tablero [2][j];
-                        tablero [2][j] = aux;
+                    if (tablero [2][j] < tablero [1][j]) {  // (1, 3, 2)
+                        intercambiar(1, 2, j);
                     }
-                } else {
-                    aux = tablero [0][j];
-                    tablero [0][j] = tablero [2][j];
-                    tablero [2][j] = aux;
-                    aux = tablero [2][j];
-                    tablero [2][j] = tablero [2][j];
-                    tablero [2][j] = aux;
+                } else {                                    // (2, 3, 1)
+                    intercambiar(0, 2, j);
+                    intercambiar(1, 2, j);
                 }
             } else {
-                if (tablero [0][j] < tablero [2][j]) {
-                    aux = tablero[0][j];
-                    tablero [0][j] = tablero [1][j];
-                    tablero [1][j] = aux;
+                if (tablero [0][j] < tablero [2][j]) {      // (2, 1, 3)
+                    intercambiar(0, 1, j);
                 } else
-                    if (tablero [1][j] < tablero [2][j]) {
-                        aux = tablero [0][j];
-                        tablero [0][j] = tablero [2][j];
-                        tablero [2][j] = aux;
-                        aux = tablero [1][j];
-                        tablero [1][j] = tablero [0][j];
-                        tablero [0][j] = aux;
-                    } else {
-                        aux = tablero [2][j];
-                        tablero [2][j] = tablero [0][j];
-                        tablero [0][j] = aux;
-                     }
+                if (tablero [1][j] < tablero [2][j]) {      // (3, 1, 2)
+                    intercambiar(0, 1, j);
+                    intercambiar(1, 2, j);
+                } else {                                    // (3, 2, 1)
+                    intercambiar(0, 2, j);
+                }
             }
         }
     }
@@ -96,5 +88,3 @@ public class Bingo {
         imprimirBingo();
     }
 }
-
-
