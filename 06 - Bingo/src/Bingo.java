@@ -15,11 +15,6 @@ public class Bingo {
                 return true;
             }
         }
-        for (int j = 0; j < columnaActual; j++) {
-            if (tablero[filaActual][j] == num) {
-                return true;
-            }
-        }
         return false;
     }
 
