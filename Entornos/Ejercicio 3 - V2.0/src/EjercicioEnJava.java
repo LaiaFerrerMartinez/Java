@@ -1,4 +1,4 @@
-<import java.util.Random;
+import java.util.Random;
 import java.util.Scanner;
 
 public class EjercicioEnJava {
@@ -7,6 +7,7 @@ public class EjercicioEnJava {
         int [] vector = new int [100];
         boolean encontrado;
         Random r = new Random();
+        int i = 0;
         do {
             vector [i] = r.nextInt(100);
             i++;
@@ -15,7 +16,7 @@ public class EjercicioEnJava {
         Scanner lector = new Scanner (System.in);
         int num = Integer.parseInt(lector.nextLine());
         encontrado = false;
-        for (int i = 0; i < 100; i++) {
+        for (i = 0; i < 100; i++) {
             if (vector[i] == num){
                 encontrado = true;
                 System.out.println("El número está en la posición " + i + ".");
