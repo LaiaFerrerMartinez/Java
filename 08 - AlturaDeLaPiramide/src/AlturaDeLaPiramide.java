@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class AlturaDeLaPiramide {
     private static final int MAX_BLOQUES = 2000000000;
-    private static void proceso () {
+    private static void casoDePrueba () {
         Scanner lector = new Scanner(System.in);
         int bloques;
         int lado;
@@ -25,17 +25,19 @@ public class AlturaDeLaPiramide {
             }
             System.out.println(altura);
         }
+        lector.close();
     }
-    private static void jugar () {
+    private static void proceso () {
         System.out.println("Dame el número de casos que quieres procesar.");
         Scanner lector = new Scanner(System.in);
         int casos = lector.nextInt();
         for (int i = 0; i < casos; i++) {
-            proceso ();
+            casoDePrueba ();
         }
+        lector.close();
     }
 
     public static void main(String[] args) {
-        jugar();
+        proceso();
     }
 }
