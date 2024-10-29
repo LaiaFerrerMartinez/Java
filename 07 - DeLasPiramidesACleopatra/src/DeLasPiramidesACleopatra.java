@@ -22,22 +22,7 @@ public class DeLasPiramidesACleopatra {
             }
             vector[i] = num;
         }
-    }
-
-    private static void ordenarNum () {
-        boolean intercambiados;
-        int aux;
-        do {
-            intercambiados = false;
-            for (int i = 0; i < MAX_NUM-1; i++) {
-                if (vector [i] > vector [i + 1]) {
-                    aux = vector [i];
-                    vector [i] = vector [i + 1];
-                    vector [i + 1] = aux;
-                    intercambiados = true;
-                }
-            }
-        } while (intercambiados);
+        lector.close();
     }
 
     // Como no existe el año 0, a todos los números negativos les sumo 1
@@ -61,24 +46,24 @@ public class DeLasPiramidesACleopatra {
         }
     }
 
-    private static void proceso () {
+    private static void casoDePrueba () {
         leerNum();
-        ordenarNum();
         comprobarNegativos();
         compararNum();
     }
 
-    private static void jugar () {
+    private static void proceso () {
         System.out.println("Dime el número de casos que quieras procesar.");
         Scanner lector = new Scanner(System.in);
         int casos = lector.nextInt();
         for (int i = 0; i < casos; i++) {
             System.out.println("Caso " + (i + 1));
-            proceso();
+            casoDePrueba();
         }
+        lector.close();
     }
 
     public static void main(String[] args) {
-        jugar();
+        proceso();
     }
 }
