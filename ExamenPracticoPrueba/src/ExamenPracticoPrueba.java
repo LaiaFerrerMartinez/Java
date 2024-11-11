@@ -25,6 +25,10 @@ public class ExamenPracticoPrueba {
 
     private static boolean ganar = false;
 
+    private static boolean movimientoFila;
+
+    private static boolean movimientoColumna;
+
     // Relleno tablero con casillas libres
     private static void rellenarTablerosL () {
         for (int i = 0; i < MAX_FILA_TABLERO; i++) {
@@ -36,39 +40,29 @@ public class ExamenPracticoPrueba {
     }
 
     // Coloco los personajes dependiendo del número de veces que hay que ponerlos en el tablero 1
-    private static void colocarPersonajesTablero1 (char pers, int num) {
+    private static void colocarPersonajesTablero (char pers, int num, char[][] tablero) {
         Random aleatorio = new Random();
-        int filaTablero1;
-        int columnaTablero1;
+        int filaTablero;
+        int columnaTablero;
         for (int i = 0; i < num; i++) {
             do {
-                filaTablero1 = aleatorio.nextInt(9);
-                columnaTablero1 = aleatorio.nextInt(9);
-            } while (tableroJugador1[filaTablero1][columnaTablero1] != 'L');
-            tableroJugador1[filaTablero1][columnaTablero1] = pers;
-            if (num==1) {
-                filaYoda = filaTablero1;
-                columnaYoda = columnaTablero1;
+                filaTablero = aleatorio.nextInt(9);
+                columnaTablero = aleatorio.nextInt(9);
+            } while (tablero[filaTablero][columnaTablero] != 'L');
+            tablero[filaTablero][columnaTablero] = pers;
+            if (pers=='Y') {
+                filaYoda = filaTablero;
+                columnaYoda = columnaTablero;
+            }
+            if (pers=='V') {
+                filaVader = filaTablero;
+                columnaVader = columnaTablero;
             }
         }
     }
 
-    // Coloco los personajes dependiendo del número de veces que hay que ponerlos en el tablero 2
-    private static void colocarPersonajesTablero2 (char pers, int num) {
-        Random aleatorio = new Random();
-        int filaTablero2;
-        int columnaTablero2;
-        for (int i = 0; i < num; i++) {
-            do {
-                filaTablero2 = aleatorio.nextInt(9);
-                columnaTablero2 = aleatorio.nextInt(9);
-            } while (tableroJugador2[filaTablero2][columnaTablero2] != 'L');
-            tableroJugador2[filaTablero2][columnaTablero2] = pers;
-            if (num==1) {
-                filaVader = filaTablero2;
-                columnaVader = columnaTablero2;
-            }
-        }
+    private static void colocarCasillaFinal (char[][] tablero) {
+        tablero[MAX_FILA_TABLERO-1][MAX_COLUMNA_TABLERO-1] = 'F';
     }
 
     // Imprime el tablero que le pidas
@@ -122,123 +116,59 @@ public class ExamenPracticoPrueba {
     }
 
     private static void movD (int casillas) {
-        if ((columnaPers + casillas) > MAX_COLUMNA_TABLERO) {
-            columnaComprobacion = casillas - 1;
-            desplazamiento (filaPers, columnaComprobacion);
+        if ((columnaPers + casillas) >= MAX_COLUMNA_TABLERO) {
+            columnaComprobacion = columnaPers + casillas - MAX_COLUMNA_TABLERO;
         } else {
             columnaComprobacion = columnaPers + casillas;
-            desplazamiento (filaPers, columnaComprobacion);
         }
+        movimientoColumna = true;
     }
 
     private static void movA (int casillas) {
         if ((columnaPers - casillas) < 0) {
-            columnaComprobacion = MAX_COLUMNA_TABLERO - casillas + 1;
-            desplazamiento (filaPers, columnaComprobacion);
+            columnaComprobacion = columnaPers - casillas + MAX_COLUMNA_TABLERO;
         } else {
             columnaComprobacion = columnaPers - casillas;
-            desplazamiento(filaPers, columnaComprobacion);
         }
+        movimientoColumna = true;
     }
 
     private static void movW (int casillas) {
         if ((filaPers - casillas) < 0) {
-            filaComprobacion = MAX_FILA_TABLERO - casillas + 1;
-            desplazamiento (filaComprobacion, columnaPers);
+            filaComprobacion = filaPers - casillas + MAX_FILA_TABLERO;
         } else {
             filaComprobacion = filaPers - casillas;
-            desplazamiento(filaComprobacion, columnaPers);
         }
+        movimientoFila = true;
     }
 
     private static void movS (int casillas) {
-        if ((filaPers + casillas) > MAX_FILA_TABLERO) {
-            filaComprobacion = casillas - 1;
-            desplazamiento (filaComprobacion, columnaPers);
+        if ((filaPers + casillas) >= MAX_FILA_TABLERO) {
+            filaComprobacion = filaPers + casillas - MAX_FILA_TABLERO;
         } else {
             filaComprobacion = filaPers + casillas;
-            desplazamiento(filaComprobacion, columnaPers);
         }
+        movimientoFila = true;
     }
 
     private static void movQ (int casillas) {
-        if ((filaPers - casillas) < 0 && (columnaPers - casillas) < 0) {
-            filaComprobacion = MAX_FILA_TABLERO - casillas + 1;
-            columnaComprobacion = MAX_COLUMNA_TABLERO - casillas + 1;
-        }
-        if ((filaPers - casillas) < 0) {
-            filaComprobacion = MAX_FILA_TABLERO - casillas + 1;
-            columnaComprobacion = columnaPers - casillas;
-        }
-        if ((columnaPers - casillas) < 0) {
-            filaComprobacion = filaPers - casillas;
-            columnaComprobacion = MAX_COLUMNA_TABLERO - casillas + 1;
-        }
-        if (((filaPers - casillas) >= 0) && ((columnaPers - casillas) >= 0)) {
-            filaComprobacion = filaPers - casillas;
-            columnaComprobacion = columnaPers - casillas;
-        }
-        desplazamiento(filaComprobacion, columnaComprobacion);
+        movA(casillas);
+        movW(casillas);
     }
 
     private static void movR (int casillas) {
-        if ((filaPers - casillas) < 0 && (columnaPers + casillas) > MAX_COLUMNA_TABLERO) {
-            filaComprobacion = MAX_FILA_TABLERO - casillas + 1;
-            columnaComprobacion = casillas - 1;
-        }
-        if ((filaPers - casillas) < 0) {
-            filaComprobacion = MAX_FILA_TABLERO - casillas + 1;
-            columnaComprobacion = columnaPers + casillas;
-        }
-        if ((columnaPers + casillas) > MAX_COLUMNA_TABLERO) {
-            filaComprobacion = filaPers - casillas;
-            columnaComprobacion = casillas - 1;
-        }
-        if (((filaPers - casillas) >= 0) && ((columnaPers + casillas) >= 0)) {
-            filaComprobacion = filaPers - casillas;
-            columnaComprobacion = columnaPers + casillas;
-        }
-        desplazamiento(filaComprobacion, columnaComprobacion);
+        movD(casillas);
+        movW(casillas);
     }
 
     private static void movE (int casillas) {
-        if ((filaPers + casillas) > MAX_FILA_TABLERO && (columnaPers - casillas) < 0) {
-            filaComprobacion = casillas - 1;
-            columnaComprobacion = MAX_COLUMNA_TABLERO - casillas + 1;
-        }
-        if ((filaPers + casillas) > MAX_FILA_TABLERO) {
-            filaComprobacion = casillas - 1;
-            columnaComprobacion = columnaPers - casillas;
-        }
-        if ((columnaYoda - casillas) < 0) {
-            filaComprobacion = filaPers + casillas;
-            columnaComprobacion = MAX_COLUMNA_TABLERO - casillas + 1;
-        }
-        if (((filaPers - casillas) >= 0) && ((columnaPers + casillas) >= 0)) {
-            filaComprobacion = filaPers - casillas;
-            columnaComprobacion = columnaPers + casillas;
-        }
-        desplazamiento(filaComprobacion, columnaComprobacion);
+        movA(casillas);
+        movS(casillas);
     }
 
     private static void movB (int casillas) {
-        if ((filaPers + casillas) < MAX_FILA_TABLERO && (filaPers + casillas) < MAX_COLUMNA_TABLERO) {
-            filaComprobacion = casillas - 1;
-            columnaComprobacion = casillas - 1;
-        }
-        if ((filaPers + casillas) < MAX_FILA_TABLERO) {
-            filaComprobacion = casillas - 1;
-            columnaComprobacion = columnaPers + casillas;
-        }
-        if ((columnaPers + casillas) < MAX_COLUMNA_TABLERO) {
-            filaComprobacion = filaPers + casillas;
-            columnaComprobacion = casillas - 1;
-        }
-        if (((filaPers + casillas) >= 0) && ((columnaPers + casillas) >= 0)) {
-            filaComprobacion = filaPers + casillas;
-            columnaComprobacion = columnaPers + casillas;
-        }
-        desplazamiento(filaComprobacion, columnaComprobacion);
+        movD(casillas);
+        movS(casillas);
     }
 
     private static void movimientos () {
@@ -249,12 +179,15 @@ public class ExamenPracticoPrueba {
         do {
             System.out.println("Dime el número de casillas que te quieres desplazar.");
             casillas = lectorCas.nextInt();
-        } while (casillas > 3 && casillas <= 0);
+        } while (casillas > 3 || casillas <= 0);
 
 
         // Pido la direccion del desplazamiento
         Scanner lector = new Scanner(System.in);
+        System.out.println("Dime la dirección de desplazamiento.");
         String direccion = lector.nextLine();
+        movimientoFila = false;
+        movimientoColumna = false;
         switch (direccion) {
             case "D":
                 movD(casillas);
@@ -280,6 +213,13 @@ public class ExamenPracticoPrueba {
             case "B":
                 movB(casillas);
                 break;
+        }
+        if (movimientoFila && movimientoColumna) {
+            desplazamiento (filaComprobacion, columnaComprobacion);
+        } else if (movimientoFila) {
+            desplazamiento(filaComprobacion, columnaPers);
+        } else if (movimientoColumna) {
+            desplazamiento(filaPers, columnaComprobacion);
         }
     }
 
@@ -330,12 +270,14 @@ public class ExamenPracticoPrueba {
 
     public static void main(String[] args) {
         rellenarTablerosL();
-        colocarPersonajesTablero1('Y', 1);
-        colocarPersonajesTablero1('D', 5);
-        colocarPersonajesTablero1('M', 5);
-        colocarPersonajesTablero2('V', 1);
-        colocarPersonajesTablero2('R', 5);
-        colocarPersonajesTablero2('M', 5);
+        colocarPersonajesTablero('Y', 1, tableroJugador1);
+        colocarPersonajesTablero('D', 5, tableroJugador1);
+        colocarPersonajesTablero('M', 5, tableroJugador1);
+        colocarCasillaFinal(tableroJugador1);
+        colocarPersonajesTablero('V', 1, tableroJugador2);
+        colocarPersonajesTablero('R', 5, tableroJugador2);
+        colocarPersonajesTablero('M', 5, tableroJugador2);
+        colocarCasillaFinal(tableroJugador2);
         jugar();
     }
 }

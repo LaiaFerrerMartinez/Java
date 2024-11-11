@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/00 - Prueba/00 - Prueba.iml" filepath="$PROJECT_DIR$/00 - Prueba/00 - Prueba.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01 - Simpson/01 - Simpson/01 - Simpson.iml" filepath="$PROJECT_DIR$/01 - Simpson/01 - Simpson/01 - Simpson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01 - Simpson/Java/01 - Simpson2.iml" filepath="$PROJECT_DIR$/01 - Simpson/Java/01 - Simpson2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02 - SimpsonProgFuncional/02 - SimpsonProgFuncional.iml" filepath="$PROJECT_DIR$/02 - SimpsonProgFuncional/02 - SimpsonProgFuncional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03 - SimpsonProgFuncionalProcedimientos/03 - SimpsonProgFuncionalProcedimientos.iml" filepath="$PROJECT_DIR$/03 - SimpsonProgFuncionalProcedimientos/03 - SimpsonProgFuncionalProcedimientos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04 - SimpsonProgFuncionalMovimientos/04 - SimpsonProgFuncionalMovimientos.iml" filepath="$PROJECT_DIR$/04 - SimpsonProgFuncionalMovimientos/04 - SimpsonProgFuncionalMovimientos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05 - SimpsonProgFuncionalMovimientosProcedimientos/05 - SimpsonProgFuncionalMovimientosProcedimientos.iml" filepath="$PROJECT_DIR$/05 - SimpsonProgFuncionalMovimientosProcedimientos/05 - SimpsonProgFuncionalMovimientosProcedimientos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06 - Bingo/06 - Bingo.iml" filepath="$PROJECT_DIR$/06 - Bingo/06 - Bingo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07 - DeLasPiramidesACleopatra/07 - DeLasPiramidesACleopatra.iml" filepath="$PROJECT_DIR$/07 - DeLasPiramidesACleopatra/07 - DeLasPiramidesACleopatra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08 - AlturaDeLaPiramide/08 - AlturaDeLaPiramide.iml" filepath="$PROJECT_DIR$/08 - AlturaDeLaPiramide/08 - AlturaDeLaPiramide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09 - Memoriza/09 - Memoriza.iml" filepath="$PROJECT_DIR$/09 - Memoriza/09 - Memoriza.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10 - Jeroglificos/10 - Jeroglificos.iml" filepath="$PROJECT_DIR$/10 - Jeroglificos/10 - Jeroglificos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11 - Codigo de Barras/11 - Codigo de Barras.iml" filepath="$PROJECT_DIR$/11 - Codigo de Barras/11 - Codigo de Barras.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12 - SopaDeLetras/12 - SopaDeLetras.iml" filepath="$PROJECT_DIR$/12 - SopaDeLetras/12 - SopaDeLetras.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Control/Control.iml" filepath="$PROJECT_DIR$/Control/Control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Challenge_Arrays_Ferrer/Ejercicio1/Ejercicio1.iml" filepath="$PROJECT_DIR$/Challenge_Arrays_Ferrer/Ejercicio1/Ejercicio1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Challenge_Arrays_Ferrer/Ejercicio2/Ejercicio2.iml" filepath="$PROJECT_DIR$/Challenge_Arrays_Ferrer/Ejercicio2/Ejercicio2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Challenge_Arrays_Ferrer/Ejercicio3/Ejercicio3.iml" filepath="$PROJECT_DIR$/Challenge_Arrays_Ferrer/Ejercicio3/Ejercicio3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Entornos/Entornos.iml" filepath="$PROJECT_DIR$/Entornos/Entornos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExamenPracticoPrueba/ExamenPracticoPrueba.iml" filepath="$PROJECT_DIR$/ExamenPracticoPrueba/ExamenPracticoPrueba.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LaiaFerrerMartinez/LaiaFerrerMartinez.iml" filepath="$PROJECT_DIR$/LaiaFerrerMartinez/LaiaFerrerMartinez.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Programame2023EjA/Programame2023EjA.iml" filepath="$PROJECT_DIR$/Programame2023EjA/Programame2023EjA.iml" />
+    </modules>
+  </component>
+</project>
