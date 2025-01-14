@@ -10,6 +10,7 @@ public class Main {
             System.out.println(magdalena.toString());
             System.out.println(croissant.toString());
             System.out.println(galleta.toString());
+            System.out.println();
 
 
         // Crear un pedido con capacidad para 5 productos
