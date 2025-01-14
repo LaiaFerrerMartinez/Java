@@ -19,5 +19,6 @@ public class Main {
             pedido.agregarProducto(galleta, 6);
             pedido.agregarProducto(magdalena, 12);
             pedido.agregarProducto(croissant, 5);
+            pedido.imprimirTicket();
     }
 }
