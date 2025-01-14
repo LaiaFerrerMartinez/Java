@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
 
-        Producto magdalena = new Producto("Magdalena de Chocolate", 1.50, 5);
-        Producto croissant = new Producto("Croissant de Chocolate", 1.50, 5);
-        Producto galleta = new Producto("Galleta de Chocolate", 1.50, 5);
+        Producto magdalena = new Producto("Magdalena de chocolate", 1.50, 10);
+        Producto croissant = new Producto("Croissant", 1.20, 5);
+        Producto galleta = new Producto("Galleta de avena", 0.80, 20);
 
         System.out.println(magdalena.getNombre());
         magdalena.setStock(25);
