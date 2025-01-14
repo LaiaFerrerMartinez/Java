@@ -46,7 +46,7 @@ public class Almacen {
             Producto producto = lstAlmacen[i];
             if (producto != null) {
                 if (nombreProducto.equals(lstAlmacen[i].getNombre())) {
-                    System.out.println(lstAlmacen[i].toString());;
+                    System.out.println(lstAlmacen[i].toString());
                 }
             }
         }
