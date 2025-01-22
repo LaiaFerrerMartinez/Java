@@ -7,6 +7,8 @@ public class Main {
         arrayPeliculas.agregar(new Pelicula("El Padrino"));
         arrayPeliculas.agregar(new Pelicula("La Guerra de las Galaxias"));
         arrayPeliculas.agregar(new Pelicula("El Caballero Oscuro"));  // Esto redimensionará el array
+        arrayPeliculas.agregar(new Pelicula("El Rey León"));  // Esto redimensionará el array
+        arrayPeliculas.agregar(new Pelicula("Harry Potter"));
 
 
         // Mostrar todas las películas almacenadas
