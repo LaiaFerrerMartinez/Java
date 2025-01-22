@@ -38,4 +38,5 @@ public class ArrayDinamicoPelicula {
     public int getTamano() {
         return tamano;
     }
+
 }
