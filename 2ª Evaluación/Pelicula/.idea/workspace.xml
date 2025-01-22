@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="db82e599-c613-4720-bc0e-84520804db40" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../03 - EjercicioDesdeMain/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03 - EjercicioDesdeMain/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03 - EjercicioDesdeMain/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03 - EjercicioDesdeMain/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03 - EjercicioDesdeMain/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03 - EjercicioDesdeMain/EjercicioDesdeMain.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03 - EjercicioDesdeMain/src/Almacen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03 - EjercicioDesdeMain/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03 - EjercicioDesdeMain/src/Pedido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03 - EjercicioDesdeMain/src/Producto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EjercicioDesdeMain/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2ryzp0Z0JsHobh3oIATwe6j4vGk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Laia/GitHub/Java-Github/Java/2ª Evaluación/05 - Película",
+    "onboarding.tips.debug.path": "D:/Laia/GitHub/Java-Github/Java/2ª Evaluación/Pelicula/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.updates"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db82e599-c613-4720-bc0e-84520804db40" name="Changes" comment="" />
+      <created>1737546284962</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737546284962</updated>
+    </task>
+    <servers />
+  </component>
+</project>
