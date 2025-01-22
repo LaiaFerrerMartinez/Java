@@ -13,5 +13,7 @@ public class Main {
 
         // Mostrar todas las películas almacenadas
         arrayPeliculas.mostrarPeliculas();
+        System.out.println();
+        arrayPeliculas.buscarPelicula("El Rey León");
     }
 }

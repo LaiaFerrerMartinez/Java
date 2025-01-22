@@ -35,6 +35,21 @@ public class ArrayDinamicoPelicula {
         }
     }
 
+    public void buscarPelicula(String titulo) {
+        boolean encontrada = false;
+        for (int i = 0; i < getTamano(); i++) {
+            if (this.peliculas[i].getTitulo().equals(titulo)) {
+                System.out.println(this.peliculas[i]);  // Llama a toString automáticamente
+                encontrada = true;
+                break;  // Si deseas detener la búsqueda después de encontrar la película
+            }
+        }
+        if (!encontrada) {
+            System.out.println("Película no encontrada.");
+        }
+    }
+
+
     public int getTamano() {
         return tamano;
     }
