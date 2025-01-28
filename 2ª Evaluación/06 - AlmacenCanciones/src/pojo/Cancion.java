@@ -39,7 +39,6 @@ public class Cancion {
         return "Cancion{" +
                 "id=" + id +
                 ", titulo='" + titulo + '\'' +
-                ", next=" + next +
                 '}';
     }
 }
