@@ -1,5 +1,6 @@
 import pojo.AlmacenMusica;
 import pojo.Cancion;
+import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -17,8 +18,13 @@ public class Main {
 
         System.out.println();
 
-        cancion2.setTitulo("Canción 2");
-        almacenMusica.updateCancion(cancion2);
+        Scanner lector = new Scanner(System.in);
+        System.out.print("Dime el título que le quieres poner a la canción: ");
+        String tituloUsuario = lector.nextLine();
+        System.out.print("Dime el id de la canción: ");
+        int idUsuario = lector.nextInt();
+        Cancion cancionUsuario;
+        almacenMusica.updateCancion(cancionUsuario = new Cancion (idUsuario, tituloUsuario));
 
         System.out.println();
 
