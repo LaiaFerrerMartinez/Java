@@ -17,6 +17,7 @@ public class Main {
 
         System.out.println();
 
+        cancion2.setTitulo("Canción 2");
         almacenMusica.updateCancion(cancion2);
 
         System.out.println();
