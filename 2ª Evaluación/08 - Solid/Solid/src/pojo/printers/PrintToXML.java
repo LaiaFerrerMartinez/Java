@@ -1,10 +1,9 @@
 package pojo.printers;
 
-import pojo.interfaces.Print;
+import pojo.herencia.Reporte;
 
-public class PrintToXML implements Print {
-    @Override
-    public void print(String cadenaATransformar) {
-
+public class PrintToXML extends Reporte {
+    public PrintToXML () {
+        super ("Cadena a transformar!!!");
     }
 }
