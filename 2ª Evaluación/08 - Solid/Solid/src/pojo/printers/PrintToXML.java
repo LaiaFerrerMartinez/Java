@@ -7,4 +7,8 @@ public class PrintToXML extends Reporte {
     public PrintToXML (String cadena) {
         super (cadena);
     }
+
+    public void imprimirCadena () {
+        System.out.println(super.cadenaATransformar);
+    }
 }

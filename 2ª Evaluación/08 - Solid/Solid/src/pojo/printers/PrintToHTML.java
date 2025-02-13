@@ -7,4 +7,7 @@ public class PrintToHTML extends Reporte {
     public PrintToHTML (String cadena) {
         super (cadena);
     }
+    public void imprimirCadena () {
+        System.out.println(super.cadenaATransformar);
+    }
 }
