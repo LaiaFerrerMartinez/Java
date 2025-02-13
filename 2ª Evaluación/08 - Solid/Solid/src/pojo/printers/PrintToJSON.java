@@ -1,4 +1,4 @@
-package pojo.interfaces.printers;
+package pojo.printers;
 
 import pojo.interfaces.Print;
 
