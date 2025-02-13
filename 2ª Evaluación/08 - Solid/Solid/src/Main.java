@@ -9,11 +9,17 @@ import java.util.ArrayList;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Reporte printToXML = new PrintToXML("FDAS");
-        Reporte printToJSON = new PrintToJSON("FDSA");
+        Reporte printToHTML = new PrintToHTML("<p>");
+        Reporte printToXML = new PrintToXML("{p}");
+        Reporte printToJSON = new PrintToJSON("'p'");
 
         ArrayList<Reporte> lst = new ArrayList<>();
-        lst.add(printToJSON);
+        lst.add(printToHTML);
         lst.add(printToXML);
+        lst.add(printToJSON);
+
+        for (Reporte reporte:lst) {
+            reporte.imprimirCadena();
+        }
     }
 }

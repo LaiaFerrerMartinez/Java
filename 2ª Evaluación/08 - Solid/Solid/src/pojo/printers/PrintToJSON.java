@@ -7,8 +7,4 @@ public class PrintToJSON extends Reporte {
     public PrintToJSON (String cadena) {
         super (cadena);
     }
-    void imprimirCadena () {
-        System.out.println(super.cadenaATransformar);
-        System.out.println(this.cadenaEnHTML);
-    }
 }

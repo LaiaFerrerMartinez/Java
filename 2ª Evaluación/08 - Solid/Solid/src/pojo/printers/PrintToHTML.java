@@ -1,10 +1,10 @@
 package pojo.printers;
 
-import pojo.interfaces.Print;
+import pojo.herencia.Reporte;
 
-public class PrintToHTML implements Print {
-    @Override
-    public void print(String cadenaATransformar) {
-
+public class PrintToHTML extends Reporte {
+    private String cadenaEnHTML;
+    public PrintToHTML (String cadena) {
+        super (cadena);
     }
 }

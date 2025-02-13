@@ -10,6 +10,8 @@ public class Reporte {
     }
 
     // MÉTODOS
-
+    public void imprimirCadena () {
+        System.out.println(this.cadenaATransformar);
+    }
         // GETTER/SETTER
 }
