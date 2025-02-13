@@ -1,10 +1,14 @@
 package pojo.printers;
 
-import pojo.interfaces.Print;
+import pojo.herencia.Reporte;
 
-public class PrintToJSON implements Print {
-    @Override
-    public void print(String cadenaATransformar) {
-
+public class PrintToJSON extends Reporte {
+    private String cadenaEnHTML;
+    public PrintToJSON (String cadena) {
+        super (cadena);
+    }
+    void imprimirCadena () {
+        System.out.println(super.cadenaATransformar);
+        System.out.println(this.cadenaEnHTML);
     }
 }

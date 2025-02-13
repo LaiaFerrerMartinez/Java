@@ -2,7 +2,7 @@ package pojo.herencia;
 
 public class Reporte {
     // ATRIBUTOS
-    private String cadenaATransformar;
+    protected String cadenaATransformar;
 
     // CONSTRUCTORES
     public Reporte (String cadenaATransformar) {
