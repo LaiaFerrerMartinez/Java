@@ -37,6 +37,10 @@ public abstract class PielVerde extends WarhammerPersonaje{
         super.defender(arma);
     }
 
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
     @Override
     public String toString() {
         return "PielVerde{" +

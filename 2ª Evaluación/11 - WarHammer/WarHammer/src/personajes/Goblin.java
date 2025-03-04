@@ -23,6 +23,7 @@ public class Goblin extends PielVerde{
         super.addArmaDefensa(arma);
     }
 
+
     @Override
     public String toString() {
         return "Goblin{" +
