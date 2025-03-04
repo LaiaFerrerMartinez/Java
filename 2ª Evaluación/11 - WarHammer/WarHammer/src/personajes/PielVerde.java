@@ -1,5 +1,8 @@
 package personajes;
 
+import armas.ArmaAtaque;
+import armas.ArmaDefensa;
+
 public abstract class PielVerde extends WarhammerPersonaje{
     // private String nombre;  --> Se hereda del padre (WarhammerPersonaje)
     private String puebloNacimiento;
@@ -13,15 +16,25 @@ public abstract class PielVerde extends WarhammerPersonaje{
     public static int getContPielesVerdes() {
         return contPielesVerdes;
     }
-    /* public void addArmaAtaque (ArmaAtaque arma) {
+    public void addArmaAtaque (ArmaAtaque arma) {
 
-    } */
-    /* public void addArmaDefensa (ArmaDefensa arma) {
+    }
+    public void addArmaDefensa (ArmaDefensa arma) {
 
-    } */
+    }
     public String imprimirArmas () {
         // Recorer HASH MAP, y preparar cadena
         return "";
+    }
+
+    @Override
+    public void atacar(WarhammerPersonaje victima) {
+        super.atacar(victima);
+    }
+
+    @Override
+    public void defender(ArmaAtaque arma) {
+        super.defender(arma);
     }
 
     @Override

@@ -1,5 +1,8 @@
 package personajes;
 
+import armas.ArmaAtaque;
+import armas.ArmaDefensa;
+
 public abstract class Enano extends WarhammerPersonaje{
     // private String nombre;  --> Se hereda del padre (WarhammerPersonaje)
     private int riqueza;
@@ -13,21 +16,30 @@ public abstract class Enano extends WarhammerPersonaje{
     public static int getContEnanos() {
         return contEnanos;
     }
-    /* public void addArmaAtaque (ArmaAtaque arma) {
+    public void addArmaAtaque (ArmaAtaque arma) {
 
-    } */
-    /* public void addArmaDefensa (ArmaDefensa arma) {
+    }
+    public void addArmaDefensa (ArmaDefensa arma) {
 
-    } */
+    }
     public String imprimirArmas () {
         // Recorer HASH MAP, y preparar cadena
         return "";
     }
+    @Override
+    public void atacar(WarhammerPersonaje victima) {
+        super.atacar(victima);
+    }
+
+    @Override
+    public void defender(ArmaAtaque arma) {
+        super.defender(arma);
+    }
 
     @Override
     public String toString() {
-        return "PielVerde{" +
-                "puebloNacimiento='" + riqueza + '\'' +
+        return "Enano{" +
+                "riqueza=" + riqueza +
                 ", nivel=" + nivel +
                 '}';
     }

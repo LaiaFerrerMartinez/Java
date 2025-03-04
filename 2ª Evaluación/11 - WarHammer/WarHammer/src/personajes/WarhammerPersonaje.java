@@ -1,6 +1,9 @@
 package personajes;
 
-public abstract class WarhammerPersonaje {
+import armas.ArmaAtaque;
+import interfaces.ICombate;
+
+public abstract class WarhammerPersonaje implements ICombate {
     private String nombre;
     private int energia;
     //protected HashMap <String, Arma> armas;
@@ -20,6 +23,15 @@ public abstract class WarhammerPersonaje {
     public String imprimirArmas () {
 
         return "";
+    }
+
+    @Override
+    public void atacar(WarhammerPersonaje victima) {
+
+    }
+    @Override
+    public void defender (ArmaAtaque arma) {
+
     }
 
     @Override
