@@ -73,6 +73,7 @@ public class Main {
                 peliculas.add(pelicula);
             }
 
+
             // 📌 Mostrar los resultados almacenados en el ArrayList
             System.out.println("\n🎬 Lista de Películas con Géneros:");
             for (Pelicula p : peliculas) {
@@ -83,4 +84,6 @@ public class Main {
             throw new RuntimeException(ex);
         }
     }
+
+
 }
